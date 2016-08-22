@@ -2,7 +2,7 @@ Fusioninventory
 ==========
 
 Everything you need to use and deploy FusionInventory-agent on OSX
-Tested on 10.8.x / 10.9.X / 10.10.x
+Tested on 10.8.x / 10.9.X / 10.10.x / 10.11.x
 
 **In daemon mode the "Force Inventory" link ( http://127.0.0.1:62354 ) not work well in Safari. Please use Firefox or Chrome to use this link.**
 
