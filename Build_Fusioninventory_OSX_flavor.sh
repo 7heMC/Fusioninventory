@@ -12,7 +12,7 @@
 
 # FusionInventory version
 FI_VERSION=$1
-if [[ $FI_VERSION = [2-2].[0-0] || $FI_VERSION = [0-2].[0-3].[0-9] || $FI_VERSION = [0-2].[0-3].[0-1][0-6] ]]; then
+if [[ $FI_VERSION = [2-2].[0-0] || $FI_VERSION = [0-2].[0-3].[0-9] || $FI_VERSION = [0-2].[0-3].[0-1][0-8] ]]; then
 		echo "Building requested package version: $FI_VERSION"
 	else
 		echo -e "\nUsage: ""$0"" [version]\nExample : ""$0"" 2.3.16\nAvailable versions (pre 2.3.5) : https://cpan.metacpan.org/authors/id/G/GO/GONERI/\nAvailable versions (post 2.3.5) : https://cpan.metacpan.org/authors/id/G/GR/GROUSSE/\n"
@@ -107,7 +107,7 @@ echo
 if [[ $UPDMOD =~ ^[Nn]$ ]]; then
 	echo "...skip update modules"
 else
-	"$PERLBREWROOTDST/perlbrew/perls/perl-$OSXPERLVER/bin/cpanm" -i --force File::Which LWP Net::IP Text::Template UNIVERSAL::require XML::TreePP Compress::Zlib HTTP::Daemon IO::Socket::SSL Parse::EDID Proc::Daemon Proc::PID::File HTTP::Proxy HTTP::Server::Simple::Authen IPC::Run JSON Net::SNMP POE::Component::Client::Ping POSIX IO::Capture::Stderr LWP::Protocol::https Test::Compile Test::Deep Test::Exception Test::HTTP::Server::Simple Test::MockModule Test::MockObject Test::NoWarnings File::Copy::Recursive Socket::GetAddrInfo UNIVERSAL::require
+	"$PERLBREWROOTDST/perlbrew/perls/perl-$OSXPERLVER/bin/cpanm" -i --force File::Which LWP Net::IP Text::Template UNIVERSAL::require XML::TreePP Compress::Zlib HTTP::Daemon IO::Socket::SSL Parse::EDID Proc::Daemon Proc::PID::File HTTP::Proxy HTTP::Server::Simple::Authen IPC::Run JSON Net::SNMP POE::Component::Client::Ping POSIX IO::Capture::Stderr LWP::Protocol::https Test::Compile Test::Deep Test::Exception Test::HTTP::Server::Simple Test::MockModule Test::MockObject Test::NoWarnings File::Copy::Recursive Socket::GetAddrInfo Data::Structure::Util
 fi
 
 if [ ! -f /tmp/$FI_DIR.tar.gz ]; then
@@ -249,7 +249,7 @@ else
 		echo
 		exit 0
 	else
-		open "$SRCDST/Deploy/Configure.command"
+		./Deploy/Configure.command
 	fi
 fi
 echo
